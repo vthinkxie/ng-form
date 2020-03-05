@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   constructor(private restApiService: RestApiService, private dataBusService: DataBusService) {}
   ngOnInit(): void {
     this.restApiService.getInitServerData().subscribe(data => {
-      this.dataBusService.serverData$.next(data);
+      this.dataBusService.dataFromServer$.next(data);
     });
   }
 }

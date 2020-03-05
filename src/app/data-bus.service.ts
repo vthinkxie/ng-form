@@ -7,17 +7,24 @@ import { isEqual } from 'lodash';
   providedIn: 'root'
 })
 export class DataBusService {
-  serverData$ = new ReplaySubject(1);
-  userData$ = new BehaviorSubject(null);
-  displayData$ = combineLatest([this.serverData$, this.userData$]).pipe(
+  // data comes from the server
+  dataFromServer$ = new ReplaySubject(1);
+  // data from the user operation
+  dataFromUserOperation$ = new BehaviorSubject(null);
+  // data passed to all the components
+  dataForView$ = combineLatest([this.dataFromServer$, this.dataFromUserOperation$]).pipe(
     map(([serverData, userData]) => {
-      if (userData) {
-        return userData;
-      } else if (serverData) {
-        return serverData;
-      }
+      return this.combineServerAndUserData(serverData, userData);
     }),
     distinctUntilChanged(isEqual)
   );
+  // combine strategy
+  combineServerAndUserData(serverData, userData) {
+    if (userData) {
+      return userData;
+    } else if (serverData) {
+      return serverData;
+    }
+  }
   constructor() {}
 }

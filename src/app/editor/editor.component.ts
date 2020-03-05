@@ -12,13 +12,13 @@ export class EditorComponent implements OnInit {
   yamlChanges(value: string): void {
     try {
       const data = JSON.parse(value);
-      this.dataBusService.userData$.next(data);
+      this.dataBusService.dataFromUserOperation$.next(data);
     } catch (e) {}
   }
   constructor(private dataBusService: DataBusService) {}
 
   ngOnInit(): void {
-    this.dataBusService.displayData$.subscribe(data => {
+    this.dataBusService.dataForView$.subscribe(data => {
       this.yaml = JSON.stringify(data, null, 4);
     });
   }
