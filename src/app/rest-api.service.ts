@@ -11,6 +11,7 @@ export class RestApiService {
   }
   getServerData() {
     return of({
+      singleValue: 'single',
       personal: { name: 'Lily', id: 1234412 }
     });
   }

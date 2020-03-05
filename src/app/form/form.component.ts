@@ -23,6 +23,7 @@ export class FormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private dataBusService: DataBusService) {}
   ngOnInit(): void {
     this.validateForm = this.formBuilder.group({
+      singleValue: null,
       personal: this.formBuilder.group({
         name: [null],
         id: [null]
