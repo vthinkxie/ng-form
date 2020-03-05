@@ -36,7 +36,7 @@ export class FormComponent implements OnInit {
       this.dataBusService.dataFromUserOperation$.next(data);
     });
     this.dataBusService.dataForView$.pipe(map(this.convertViewDataToFormValue)).subscribe(data => {
-      this.validateForm.patchValue(data);
+      this.validateForm.patchValue(data, { emitEvent: false });
     });
   }
 }

@@ -1,10 +1,4 @@
 <form [formGroup]="validateForm">
-  <ng-container formGroupName="personal">
-    <div><label>Name:</label><input type="text" formControlName="name" /></div>
-    <div><label>ID:</label><input type="number" formControlName="id" /></div>
-  </ng-container>
-  <ng-container formGroupName="family">
-    <div><label>location:</label><input type="text" formControlName="location" /></div>
-    <div><label>number:</label><input type="number" formControlName="number" /></div>
-  </ng-container>
+  <app-child-form-personal></app-child-form-personal>
+  <app-child-form-family></app-child-form-family>
 </form>
