@@ -1,6 +1,4 @@
-<ng-container [formGroup]="controlContainer.control">
-  <ng-container formGroupName="personal">
-    <div><label>Name:</label><input type="text" formControlName="name" /></div>
-    <div><label>ID:</label><input type="number" formControlName="id" /></div>
-  </ng-container>
+<ng-container [formGroup]="parentForm">
+  <div><label>Name:</label><input type="text" formControlName="name" /></div>
+  <div><label>ID:</label><input type="number" formControlName="id" /></div>
 </ng-container>

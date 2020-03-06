@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ControlContainer } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, ControlContainer, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-child-form-single',
@@ -7,10 +7,8 @@ import { ControlContainer } from '@angular/forms';
   styleUrls: ['./child-form-single.component.css']
 })
 export class ChildFormSingleComponent implements OnInit {
+  @Input() parentForm: FormGroup | AbstractControl;
+  constructor() {}
 
-  constructor(public controlContainer: ControlContainer) {}
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -8,9 +8,10 @@ import { EditorComponent } from './editor/editor.component';
 import { ChildFormPersonalComponent } from './child-form-personal/child-form-personal.component';
 import { ChildFormFamilyComponent } from './child-form-family/child-form-family.component';
 import { ChildFormSingleComponent } from './child-form-single/child-form-single.component';
+import { FormDescendantComponent } from './form-descendant/form-descendant.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, EditorComponent, ChildFormPersonalComponent, ChildFormFamilyComponent, ChildFormSingleComponent],
+  declarations: [AppComponent, FormComponent, EditorComponent, ChildFormPersonalComponent, ChildFormFamilyComponent, ChildFormSingleComponent, FormDescendantComponent],
   imports: [BrowserModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

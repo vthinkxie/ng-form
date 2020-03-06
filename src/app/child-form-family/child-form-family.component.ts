@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroupDirective } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-child-form-family',
@@ -7,7 +7,8 @@ import { FormGroupDirective } from '@angular/forms';
   styleUrls: ['./child-form-family.component.css']
 })
 export class ChildFormFamilyComponent implements OnInit {
-  constructor(public formGroupDirective: FormGroupDirective) {}
+  @Input() parentForm: FormGroup | AbstractControl;
+  constructor() {}
 
   ngOnInit(): void {}
 }

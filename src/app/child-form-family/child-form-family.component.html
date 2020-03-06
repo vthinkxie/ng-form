@@ -1,7 +1,5 @@
-<ng-container [formGroup]="formGroupDirective.control">
-  {{formGroupDirective.form.get('singleValue').value}}
-  <ng-container formGroupName="family">
-    <div><label>location:</label><input type="text" formControlName="location" /></div>
-    <div><label>number:</label><input type="number" formControlName="number" /></div>
-  </ng-container>
+<ng-container [formGroup]="parentForm">
+  <div><label>location:</label><input type="text" formControlName="location" /></div>
+  <div><label>number:</label><input type="number" formControlName="number" /></div>
+  <app-form-descendant [parentForm]="parentForm.get('descendant')"></app-form-descendant>
 </ng-container>

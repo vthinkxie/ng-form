@@ -30,7 +30,10 @@ export class FormComponent implements OnInit {
       }),
       family: this.formBuilder.group({
         location: [null],
-        number: [null]
+        number: [null],
+        descendant: this.formBuilder.group({
+          name: [null]
+        })
       })
     });
     this.validateForm.valueChanges.pipe(map(this.convertFormValueToUserOperationData)).subscribe(data => {

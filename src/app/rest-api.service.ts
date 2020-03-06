@@ -19,7 +19,10 @@ export class RestApiService {
     return of({
       family: {
         location: 'New York',
-        number: 5
+        number: 5,
+        descendant: {
+          name: 'descendant'
+        }
       }
     });
   }

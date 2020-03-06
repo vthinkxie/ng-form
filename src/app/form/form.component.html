@@ -1,5 +1,3 @@
-<form [formGroup]="validateForm">
-  <app-child-form-single></app-child-form-single>
-  <app-child-form-personal></app-child-form-personal>
-  <app-child-form-family></app-child-form-family>
-</form>
+<app-child-form-single [parentForm]="validateForm"></app-child-form-single>
+<app-child-form-personal [parentForm]="validateForm.get('personal')"></app-child-form-personal>
+<app-child-form-family [parentForm]="validateForm.get('family')"></app-child-form-family>
